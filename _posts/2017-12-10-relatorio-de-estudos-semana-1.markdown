@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Relatório de estudos: Semana 01"
-date:   2017-12-10 14:05:39
+date:   "2017-12-10 14:05:39 -0200"
 categories: vuejs java sass haskell kotlin
 ---
 Desde o dia 04/12 comecei a buscar uma rotina de estudos para aumentar meu conhecimento de forma gradual. Por mais que já tenhamos uma rotina diária, seja ela devida ao nosso trabalho, escola ou faculdade, é muito importante a busca por aprender coisas novas, principalmente que fujam àquele contexto que vivemos diariamente, sendo assim, procurei uma forma eficiente para poder colocar isso em prática.
@@ -54,4 +54,4 @@ O curso começa em como utilizar o Kotlin por meio do Android Studio e explicand
 Por vezes posso me interessar por outros assuntos, então irei trazer esse conteúdo extra nessa seção. Esta semana também acompanhei um curso online sobre Jekyll, tanto que o blog pelo qual lê esse artigo foi criado com esta ferramenta. O curso estava gratuito na Udemy: [Criando sites estáticos com Jekyll](https://www.udemy.com/criando-sites-estaticos-com-jekyll/learn/v4/overview).
 
 
-Para o próximo artigo, espero ter concluído as questões introdutórias da maioria dos assuntos e iniciar nas atividades práticas ou assuntos teóricos mais avançados. 
+Para o próximo artigo, espero ter concluído as questões introdutórias da maioria dos assuntos e iniciar nas atividades práticas ou assuntos teóricos mais avançados.
