@@ -13,3 +13,7 @@ script: ./script/cibuild
 
 exclude: [vendor]
 sudo: false
+
+env:
+  global:
+    - GH_REF: github.com/jonatasleon/blog.git

@@ -13,7 +13,7 @@ rm -rf _site || exit 0;
 mkdir _site;
 
 # clone remote repo to "_site"
-git clone https://{$GH_TOKEN}@github.com/jonatasleon/blog.git --branch gh-pages _site
+git clone https://${GH_TOKEN}@${GH_REF} --branch gh-pages _site
 
 # build with Jekyll into "_site"
 bundle exec jekyll build
