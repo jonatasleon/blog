@@ -26,7 +26,7 @@ Nesta semana o conteúdo foi introdutório, o que é o Vue.js e como criar um pr
 
 ### Terça-feira (Arquitetura Java)
 
-Hoje já tenho um forte conhecimento em Java, principalmente para Android, mas sempre tiver a preocupação de entender muito bem questões como orientação a objetos, design patterns e princípios ligados a arquitetura de software. Com o livro [Introdução à arquitetura e design de software](https://www.submarino.com.br/produto/110868329/livro-introducao-a-arquitetura-e-design-de-software), que consegui emprestado, espero criar um sólido conhecimento nesses assuntos.
+Já tenho um forte conhecimento em Java, principalmente para Android, mas sempre tive a preocupação de entender muito bem questões como orientação a objetos, design patterns e princípios ligados a arquitetura de software. Com o livro [Introdução à arquitetura e design de software](https://www.submarino.com.br/produto/110868329/livro-introducao-a-arquitetura-e-design-de-software), que consegui emprestado, espero criar um sólido conhecimento nesses assuntos.
 
 O início da leitura se deu pela introdução ao que é arquitetura e design de softwares, também sobre o conceito de implementação e como esses termos estão relacionados.
 
