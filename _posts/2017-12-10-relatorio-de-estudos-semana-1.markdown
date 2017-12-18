@@ -8,7 +8,7 @@ Desde o dia 04/12 comecei a buscar uma rotina de estudos para aumentar meu conhe
 
 ## Cada dia um assunto diferente
 
-Uma efetiva maneira que encontrei para isso foi a cada dia da semana estudar um assunto diferente. Você pode pensar, *"Mas isso não torna a fixação do conteúdo mais difícil?"* A resposta para essa pergunta é *depende*. Para que todo o conteúdo estudado seja fixado, é importante que essa rotina se mantenha constante. *Porque não estudar um assunto e depois o outro?* Por experiência posso dizer que isso vai se tornar cansativo, o que era para ser algo a nos estimular, se torna algo que vamos começar a *"deixar para depois"*. Cada dia aprendendo algo, ficamos empolgados pela próxima semana, para voltar naquele conteúdo, mas também animados para o dia seguinte, pois, complementaremos, algo visto na semana anterior. Se gostou e quer saber melhor como conciliar essa rotina de estudo, acesse a [postagem](https://blog.alura.com.br/o-dia-a-dia-de-um-profissional-que-aprende-o-calendario-de-estudo/) onde li a primeira vez sobre isso.
+Uma maneira efetiva que encontrei para isso foi a cada dia da semana estudar um assunto diferente. Você pode pensar, *"Mas isso não torna a fixação do conteúdo mais difícil?"* A resposta para essa pergunta é *depende*. Para que todo o conteúdo estudado seja fixado, é importante que essa rotina se mantenha constante. *Porque não estudar um assunto e depois o outro?* Por experiência posso dizer que isso vai se tornar cansativo, o que era para ser algo a nos estimular, se torna algo que vamos começar a *"deixar para depois"*. Cada dia aprendendo algo, ficamos empolgados pela próxima semana, para voltar naquele conteúdo, mas também animados para o dia seguinte, pois, complementaremos, algo visto na semana anterior. Se gostou e quer saber melhor como conciliar essa rotina de estudo, acesse a [postagem](https://blog.alura.com.br/o-dia-a-dia-de-um-profissional-que-aprende-o-calendario-de-estudo/) onde li a primeira vez sobre isso.
 
 Já definido o que fazer, ainda precisava definir como estudar. Escolhi, ou a leitura de um livro, ou um curso online, utilizando no mínimo 1 hora por dia. Dessa forma eu posso estudar no meu tempo, seja durante o horário de almoço, assim que chego em casa ou logo antes de dormir.
 
@@ -47,7 +47,7 @@ O livro está em inglês na plataforma Mapt.io, escolhi estudar dessa forma por 
 
 Como já dito acima, tenho um forte background em Java/Android, mas com Kotlin sendo uma novidade e já conquistando uma boa aceitação entre os desenvolvedores, já está mais que na hora de começar a aprender essa linguagem, isso será feito através do [Curso Kotlin Android]( https://www.udemy.com/curso-kotlin-android/learn/v4/overview), na Udemy.
 
-O curso começa em como utilizar o Kotlin por meio do Android Studio e explicando algumas diferenças de Kotlin sobre o Java.
+O curso começa em como utilizar o Kotlin por meio da IntelliJ IDEA e explicando algumas diferenças de Kotlin sobre o Java.
 
 ### Extra
 
