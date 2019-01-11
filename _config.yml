@@ -1,43 +1,57 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Jonatas' Blog
-email: me@jonatasleon.com
-description: >- # this means to ignore newlines until "baseurl:"
+# Site
+title:              Jonatas' Blog
+bio:                'Software Development'
+locale:             pt_BR
+baseurl:            /
+url:                http://jonatasleon.com
+description: >-
   Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "http://jonatasleon.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jonatasleon
-github_username:  jonatasleon
 
-# Build settings
-markdown: kramdown
-permalink: /:title
-theme: minima
-plugins:
+# Jekyll
+permalink:          /:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+mathjax:            true
+sass:
+  sass_dir:         _sass
+  style:            compressed
+
+# Comments
+disqus_shortname:   jonatasleon
+
+# Social
+twitter_username:   jonatasleon
+github_username:    jonatasleon
+email:              me@jonatasleon.com
+twitter:            jonatasleon
+github-url:         jonatasleon
+linkedin:           jonatasleon
+medium:             '@jonatasleon'
+
+# Gems
+gems:
+  - jekyll-mentions
   - jekyll-feed
-  - jemoji
+  - jekyll-sitemap
+  - jekyll-gist
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Exclude List
+exclude:
+  - _site
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - LICENSE
+  - node_modules
+  - package.json
+  - Rakefile
+  - README.md
+  - src
+  - vendor
