@@ -2,10 +2,12 @@
 title:              Jonatas' Blog
 bio:                'Software Development'
 locale:             pt_BR
-baseurl:            /
+baseurl:            /blog
 url:                http://jonatasleon.com
 description: >-
   Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.
+logo:               'assets/img/profile.jpg'
+background:         'assets/img/placeholder-big.jpg'
 
 # Jekyll
 permalink:          /:title/
