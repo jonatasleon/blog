@@ -37,7 +37,7 @@ linkedin:           jonatasleon
 medium:             '@jonatasleon'
 
 # Gems
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
