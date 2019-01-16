@@ -1,5 +1,5 @@
 # Site
-title:              Jonatas' Blog
+title:              Jonatas Leon
 bio:                'Software Development'
 locale:             pt_BR
 baseurl:            /blog
@@ -42,6 +42,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
+  - jemoji
 
 # Exclude List
 exclude:
