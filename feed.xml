@@ -1,93 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://jonatasleon.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jonatasleon.com/blog/" rel="alternate" type="text/html" /><updated>2019-01-16T03:03:36+00:00</updated><id>http://jonatasleon.com/blog/feed.xml</id><title type="html">Jonatas Leon</title><subtitle>Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.</subtitle><entry><title type="html">Relatório de estudos: Semana 02</title><link href="http://jonatasleon.com/blog/relatorio-de-estudos-semana-2/" rel="alternate" type="text/html" title="Relatório de estudos: Semana 02" /><published>2017-12-17T23:44:00+00:00</published><updated>2017-12-17T23:44:00+00:00</updated><id>http://jonatasleon.com/blog/relatorio-de-estudos-semana-2</id><content type="html" xml:base="http://jonatasleon.com/blog/relatorio-de-estudos-semana-2/">&lt;p&gt;Nesta semana almejei adquirir todo conteúdo introdutório em cada assunto, começando no dia 11. Entretanto, durante a semana, imprevistos ocorreram, com isso a rotina foi parcialmente impactada, nada que não tivesse como remediar.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://jonatasleon.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jonatasleon.com/blog/" rel="alternate" type="text/html" /><updated>2019-01-18T03:17:55+00:00</updated><id>http://jonatasleon.com/blog/feed.xml</id><title type="html">Jonatas Leon</title><subtitle>Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.</subtitle><entry><title type="html">Manipulação de Dados Multidimensionais com Python</title><link href="http://jonatasleon.com/blog/python-para-dados-meteorologicos/" rel="alternate" type="text/html" title="Manipulação de Dados Multidimensionais com Python" /><published>2019-01-18T01:09:00+00:00</published><updated>2019-01-18T01:09:00+00:00</updated><id>http://jonatasleon.com/blog/python-para-dados-meteorologicos</id><content type="html" xml:base="http://jonatasleon.com/blog/python-para-dados-meteorologicos/">&lt;p&gt;Conteúdo rápido para consultas posteriores sobre manipulação de dados multidimensionais com Python.&lt;/p&gt;
 
-&lt;h2 id=&quot;essa-abordagem-funciona&quot;&gt;Essa abordagem funciona?&lt;/h2&gt;
+&lt;p&gt;Dependências:&lt;/p&gt;
 
-&lt;p&gt;A resposta curta: depende! Como me disseram uma vez “o depende é uma boa resposta, desde que seguida de um porque”. O porque, que também é a minhão opinião somada a experiência dessa primeira semana, é que esse método de estudos só funcionará se você estudar algo que goste e seja capaz de entender. Primeiro, deve ser um assunto que você realmente esteja animado em estudar, caso contrário, se você incluir algo que você não ache interessante, isso pode prejudicar o desenvolvimento da rotina ao longo da semana. Segundo, qualquer que seja o assunto, o material utilizado deve estar em um nível que permita-nos ter uma baixa curva de aprendizado, exemplificando, não adianta estudarmos &lt;em&gt;Vue.js&lt;/em&gt; se não dominamos o essencial sobre &lt;em&gt;Javascript&lt;/em&gt;, isso pode parecer lógico, mas na animação em aprender aquilo que está na moda, pensamos que estudar o básico é perda de tempo.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Python 3.x;&lt;/li&gt;
+  &lt;li&gt;Jupyter Notebooks;&lt;/li&gt;
+  &lt;li&gt;xarray;&lt;/li&gt;
+  &lt;li&gt;dask;&lt;/li&gt;
+  &lt;li&gt;matplotlib;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Sendo assim, a recomendação que faço é: &lt;em&gt;“Ao sentir que o assunto desejado não atende a sua expectativa, ou está em um nível de conhecimento acima, troque quanto antes”&lt;/em&gt;, mas não veja o tempo gasto como desperdício, pois aquele assunto não é interessante hoje, mas pode vir a ser no futuro.&lt;/p&gt;
+&lt;p&gt;O trecho de código abaixo realiza o download dos dados de Ventos do Mar Misturados (&lt;a href=&quot;https://www.ncdc.noaa.gov/data-access/marineocean-data/blended-global/blended-sea-winds&quot; title=&quot;Blended Sea Winds&quot;&gt;Blended Sea Winds&lt;/a&gt;) para o ano de 2017. Para alterar o período de tempo, altere a string de &lt;em&gt;matching&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;'uv2017010?rt.nc'&lt;/code&gt;, supondo que você queira adquirir dados de todo o ano de 2017, &lt;code class=&quot;highlighter-rouge&quot;&gt;'uv2017????rt.nc'&lt;/code&gt;:&lt;/p&gt;
 
-&lt;h2 id=&quot;semana-02&quot;&gt;Semana 02&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ftplib&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fnmatch&lt;/span&gt;
 
-&lt;p&gt;Tive um primeiro dia de ansiedade, por rever esses novos assuntos que dei início na semana anterior, mas me privando de tentar adiantar os conteúdos que iria ver nos dias seguintes, com o intuito de não acumular muita matéria no mesmo dia. Foi uma semana em que tive mais &lt;em&gt;compromissos&lt;/em&gt; que o normal, começando por segunda e terça, dias que foi comemorado meu aniversário :satisfied::tada:, e sexta-feira, quando fui ao cinema (ver Star Wars :heart:) e não havia como adiantar o conteúdo no período da manhã ou tarde, pois, estava em um evento pelo grupo onde trabalho. Mesmo com tudo isso, pode se considerar mais uma semana de sucesso.&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ftplib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FTP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'eclipse.ncdc.noaa.gov'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Define servidor FTP a ser acessado&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Realiza autenticação perante o servidor&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/pub/seawinds/SI/uv/daily/netcdf/2000s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Define diretório atual&lt;/span&gt;
 
-&lt;h3 id=&quot;segunda-feira-vuejs&quot;&gt;Segunda-feira (&lt;em&gt;Vue.js&lt;/em&gt;)&lt;/h3&gt;
+&lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nlst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Lista diretórios e arquivos no diretório atual&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fnmatch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'uv2017010?rt.nc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Filtra arquivos desejados&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Coloca os arquivos em ordem alfabética&lt;/span&gt;
 
-&lt;p&gt;Como este foi o grande dia :tada:, tirei pouco tempo para dar continuidade aos estudos com &lt;em&gt;Vue.js&lt;/em&gt;.&lt;/p&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'wb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;retrbinary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'RETR {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Após os capítulos com introdução e um pouco de teoria sobre o &lt;em&gt;framework&lt;/em&gt;, foi estudado sobre as &lt;em&gt;diretivas&lt;/em&gt; do Vue e, ao final do capítulo 4, o autor propõe algumas atividades &lt;a href=&quot;https://github.com/jonatasleon/front-end-vuejs/blob/master/criando-exibindo-dados/README.md#criando-exibindo-dados&quot;&gt;teóricas&lt;/a&gt; que servem para revisar o conteúdo abordado.&lt;/p&gt;
+&lt;p&gt;Agora vamos abrir os arquivos obtidos:&lt;/p&gt;
 
-&lt;h3 id=&quot;terça-feira-arquitetura-java&quot;&gt;Terça-feira (Arquitetura Java)&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;xarray&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xr&lt;/span&gt;
 
-&lt;p&gt;Pela facilidade que tenho utilizando o app &lt;em&gt;Amazon Kindle&lt;/em&gt;, posso ler o livro em qualquer lugar, já que ele não apresentou nenhuma atividade prática, mesmo assim, se mostrou um material muito rico e que tem muito a acrescentar.&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;ds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open_mfdataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filenames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;O livro trouxe conceitos teóricos sobre a &lt;em&gt;JVM&lt;/em&gt; e, principalmente, sobre como funciona o &lt;em&gt;Garbage Collector&lt;/em&gt;, ajudando entender os algorítimos responsáveis pela coleta dos objetos na memória.&lt;/p&gt;
+&lt;p&gt;A função &lt;a href=&quot;http://xarray.pydata.org/en/stable/generated/xarray.open_mfdataset.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;open_mfdataset&lt;/code&gt;&lt;/a&gt; recebe a lista de arquivos para abrir e retorna um objeto &lt;a href=&quot;http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;xarray.Dataset&lt;/code&gt;&lt;/a&gt;. O resultado de &lt;code class=&quot;highlighter-rouge&quot;&gt;print(ds)&lt;/code&gt; são os metadados dos dados abertos.&lt;/p&gt;
 
-&lt;h3 id=&quot;quarta-feira-sass&quot;&gt;Quarta-feira (Sass)&lt;/h3&gt;
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;xarray.Dataset&amp;gt;
+Dimensions:  (lat: 719, lon: 1440, time: 9, zlev: 1)
+Coordinates:
+  * zlev     (zlev) float32 10.0
+  * lat      (lat) float32 -89.75 -89.5 -89.25 -89.0 ... 89.0 89.25 89.5 89.75
+  * lon      (lon) float32 0.0 0.25 0.5 0.75 1.0 ... 359.0 359.25 359.5 359.75
+  * time     (time) datetime64[ns] 2017-01-01T09:00:00 ... 2017-01-09T09:00:00
+Data variables:
+    u        (time, zlev, lat, lon) float32 nan nan nan nan ... nan nan nan nan
+    v        (time, zlev, lat, lon) float32 nan nan nan nan ... nan nan nan nan
+    w        (time, zlev, lat, lon) float32 nan nan nan nan ... 0.0 0.0 0.0 0.0
+Attributes:
+    Conventions:         COARDS, CF-1.0, Unidata Dataset Discovery v1.0
+    title:               NOAA/NCDC Blended daily 0.25-degree Sea Surface Winds
+    source:              Multiple satellite observations: DMSP SSMI F08, F10,...
+    summary:             Gridded and blended sea surface vector winds from mu...
+    Keywords:            sea winds, ocean winds, sea surface winds, air-sea i...
+    references:          links at http://www.ncdc.noaa.gov/oa/rsad/blendedsea...
+    History:             Simple spatiotemporally weighted Interpolation (SI),...
+    institution:         NOAA NESDIS National Climatic Data Center
+    Contact:             Huai-Min.Zhang AT noaa.gov or satorder AT noaa.gov; ...
+    Acknowledgment:      The gridded data were generated from the multiple sa...
+    Data_Calendar_Date:  2017-01-01
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Foi a vez de aprender mais sobre as funcionalidades básicas de SASS: &lt;em&gt;comentários, aninhamento e referência ao seletor pai&lt;/em&gt;. Com esse pouco de conteúdo estudado se pode entender as vantagens do SASS sobre o CSS e como ele pode ajudar no desenvolvimento e manutenção de folhas de estilo.&lt;/p&gt;
+&lt;p&gt;Para calcular a magnitude de &lt;code class=&quot;highlighter-rouge&quot;&gt;'u'&lt;/code&gt; e &lt;code class=&quot;highlighter-rouge&quot;&gt;'v'&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;quinta-feira-haskell&quot;&gt;Quinta-feira (Haskell)&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
 
-&lt;p&gt;Aqui temos a razão do conselho dado no início desse post. O livro que havia escolhido começou a tratar sobre &lt;em&gt;análise de dados com Haskell&lt;/em&gt;, por mais que esse tema seja uma área que tenho muita vontade de aprender sobre, Haskell ainda é uma incógnita. Escolhi continuar os estudos em Haskell, mas com outro material, um conjunto de vídeo-aulas: &lt;a href=&quot;https://www.packtpub.com/mapt/video/application_development/9781786465542&quot;&gt;Learning Haskell Programming&lt;/a&gt;, também na plataforma Mapt.io.&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;mag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'v'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Obs.: Um material para consulta, &lt;a href=&quot;http://www.iag.usp.br/~agg_1400200/moddata/METEOROLOGIA/5_Vento_completo.pdf&quot;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;O instrutor, após apresentar a linguagem e realizar sua configuração, conduz o espectador através de como funciona a tipagem do Haskell e mostra como tudo se resume a funções.&lt;/p&gt;
+&lt;p&gt;Para gerar gráficos, vamos utilizar a api da biblioteca &lt;a href=&quot;http://xarray.pydata.org/en/stable/plotting.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;xarray&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;sexta-feiradomingo-sweat_smile-kotlin&quot;&gt;Sexta-feira/Domingo :sweat_smile: (Kotlin)&lt;/h3&gt;
-
-&lt;p&gt;Como sexta-feira foi um dia atípico, deixei o estudo de Kotlin para domingo, dia 17.&lt;/p&gt;
-
-&lt;p&gt;Foi apresentado como que o Kotlin trabalha com as variáveis, &lt;em&gt;NullPointerException&lt;/em&gt; e suas estruturas condicionais e de laços de repetição. Aqui a linguagem se mostra vantajosa em relação à algumas particularidades do Java. Quanto ao curso, busca introduzir apenas o Kotlin, até o momento, lembrando que trata de Kotlin para desenvolvimento Android.&lt;/p&gt;
-
-&lt;h3 id=&quot;extra&quot;&gt;Extra&lt;/h3&gt;
-
-&lt;p&gt;Nesta semana, li postagens falando sobre as desvantagens da arquitetura REST, em especial, este chamou-me a atenção: &lt;strong&gt;&lt;a href=&quot;https://medium.com/@pakaldebonchamp/rest-is-the-new-soap-97ff6c09896d&quot;&gt;REST is the new SOAP&lt;/a&gt;&lt;/strong&gt;. O autor, por mais simplista a visão que ele apresenta sobre a arquitetura, propõe argumentos válidos sobre como as coisas poderiam ser melhores, na opinião dele, utilizando &lt;a href=&quot;https://en.wikipedia.org/wiki/Remote_procedure_call&quot;&gt;RPC&lt;/a&gt;. Recomendo a leitura e a pesquisa por melhores maneiras de se criar &lt;em&gt;webservices&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Com dito, vejo esta semana como bem-sucedida, pois, sem deixar de ter momentos de lazer, foi possível realizar a meta de estudos. Espero continuar nesse ritmo, aprendendo cada vez mais e podendo escrever na mesma proporção, logo que estes “relatórios” estão se tornando mais uma forma de prática e aprendizado.&lt;/p&gt;</content><author><name></name></author><summary type="html">Nesta semana almejei adquirir todo conteúdo introdutório em cada assunto, começando no dia 11. Entretanto, durante a semana, imprevistos ocorreram, com isso a rotina foi parcialmente impactada, nada que não tivesse como remediar.</summary></entry><entry><title type="html">Relatório de estudos: Semana 01</title><link href="http://jonatasleon.com/blog/relatorio-de-estudos-semana-1/" rel="alternate" type="text/html" title="Relatório de estudos: Semana 01" /><published>2017-12-10T16:05:39+00:00</published><updated>2017-12-10T16:05:39+00:00</updated><id>http://jonatasleon.com/blog/relatorio-de-estudos-semana-1</id><content type="html" xml:base="http://jonatasleon.com/blog/relatorio-de-estudos-semana-1/">&lt;p&gt;Desde o dia 04/12 comecei a buscar uma rotina de estudos para aumentar meu conhecimento de forma gradual. Por mais que já tenhamos uma rotina diária, seja ela devida ao nosso trabalho, escola ou faculdade, é muito importante a busca por aprender coisas novas, principalmente que fujam àquele contexto que vivemos diariamente, sendo assim, procurei uma forma eficiente para poder colocar isso em prática.&lt;/p&gt;
-
-&lt;h2 id=&quot;cada-dia-um-assunto-diferente&quot;&gt;Cada dia um assunto diferente&lt;/h2&gt;
-
-&lt;p&gt;Uma maneira efetiva que encontrei para isso foi a cada dia da semana estudar um assunto diferente. Você pode pensar, &lt;em&gt;“Mas isso não torna a fixação do conteúdo mais difícil?”&lt;/em&gt; A resposta para essa pergunta é &lt;em&gt;depende&lt;/em&gt;. Para que todo o conteúdo estudado seja fixado, é importante que essa rotina se mantenha constante. &lt;em&gt;Porque não estudar um assunto e depois o outro?&lt;/em&gt; Por experiência posso dizer que isso vai se tornar cansativo, o que era para ser algo a nos estimular, se torna algo que vamos começar a &lt;em&gt;“deixar para depois”&lt;/em&gt;. Cada dia aprendendo algo, ficamos empolgados pela próxima semana, para voltar naquele conteúdo, mas também animados para o dia seguinte, pois, complementaremos, algo visto na semana anterior. Se gostou e quer saber melhor como conciliar essa rotina de estudo, acesse a &lt;a href=&quot;https://blog.alura.com.br/o-dia-a-dia-de-um-profissional-que-aprende-o-calendario-de-estudo/&quot;&gt;postagem&lt;/a&gt; onde li a primeira vez sobre isso.&lt;/p&gt;
-
-&lt;p&gt;Já definido o que fazer, ainda precisava definir como estudar. Escolhi, ou a leitura de um livro, ou um curso online, utilizando no mínimo 1 hora por dia. Dessa forma eu posso estudar no meu tempo, seja durante o horário de almoço, assim que chego em casa ou logo antes de dormir.&lt;/p&gt;
-
-&lt;p&gt;Agora a parte mais interessante, o que estudar? Sempre que leio alguma &lt;em&gt;newsletter&lt;/em&gt;, ouço podcast ou assisto algo sobre uma nova tecnologia, me bate aquela vontade de entender como aquilo funciona, mas nem tudo que vemos de novidade é plausível de se aplicado no dia-a-dia, então essas coisas vão ficando na lista do &lt;em&gt;“Quem sabe mais frente”&lt;/em&gt;. Nada melhor do que rever esses desejos e coloca-los em prática de uma vez, assim defini 5 itens para estudo: &lt;code class=&quot;highlighter-rouge&quot;&gt;Vue.js&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Arquitetura Java&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Sass&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Haskell&lt;/code&gt; e &lt;code class=&quot;highlighter-rouge&quot;&gt;Kotlin&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;semana-01&quot;&gt;Semana 01&lt;/h2&gt;
-
-&lt;p&gt;Semana inicial, após a definição do que será estudado, foi dada início na rotina. Ainda é necessário acostumar em não dar continuidade ao assunto do dia anterior. Durante o trabalho às vezes me pego pensando naquilo que aprendi no dia anterior, até abro alguns links com artigos ou documentações falando a respeito, além disso, também fico ansioso pelo que vou estudar naquele dia.&lt;/p&gt;
-
-&lt;h3 id=&quot;segunda-feira-vuejs&quot;&gt;Segunda-feira (Vue.js)&lt;/h3&gt;
-
-&lt;p&gt;Para esse item, adquiri o livro &lt;a href=&quot;https://www.casadocodigo.com.br/products/livro-frontend-vue&quot;&gt;Front-end com Vue.js&lt;/a&gt;. Por mais que eu já tenha lido sobre Vue.js, ainda não realizei nenhum projeto com esse framework, no máximo manutenções em projetos já existentes. Com este livro, espero aprofundar o conhecimento e então poder utilizar o Vue em algum projeto.&lt;/p&gt;
-
-&lt;p&gt;Nesta semana o conteúdo foi introdutório, o que é o Vue.js e como criar um projeto básico.&lt;/p&gt;
-
-&lt;h3 id=&quot;terça-feira-arquitetura-java&quot;&gt;Terça-feira (Arquitetura Java)&lt;/h3&gt;
-
-&lt;p&gt;Já tenho um forte conhecimento em Java, principalmente para Android, mas sempre tive a preocupação de entender muito bem questões como orientação a objetos, design patterns e princípios ligados a arquitetura de software. Com o livro &lt;a href=&quot;https://www.submarino.com.br/produto/110868329/livro-introducao-a-arquitetura-e-design-de-software&quot;&gt;Introdução à arquitetura e design de software&lt;/a&gt;, que consegui emprestado, espero criar um sólido conhecimento nesses assuntos.&lt;/p&gt;
-
-&lt;p&gt;O início da leitura se deu pela introdução ao que é arquitetura e design de softwares, também sobre o conceito de implementação e como esses termos estão relacionados.&lt;/p&gt;
-
-&lt;h3 id=&quot;quarta-feira-sass&quot;&gt;Quarta-feira (Sass)&lt;/h3&gt;
-
-&lt;p&gt;CSS nunca foi meu forte, mas sempre precisei lidar com ele nos projetos que trabalhei. No meio do caminho encontrei o Sass, um pré-compilador CSS que ajuda na manutenibilidade do código CSS, então através do livro que já tenho a um bom tempo, &lt;a href=&quot;http://www.novatec.com.br/livros/fundamentos-sass-compass/&quot;&gt;Fundamentos de Sass e Compass&lt;/a&gt;, pretendo entender melhor dessa ferramenta.&lt;/p&gt;
-
-&lt;p&gt;Já havia começado a ler o livro anteriormente, mas resolvi começar novamente. Com isso o livro se inicia com o que é Sass e Compass e como eles podem ajudar na manutenção de um código CSS, como utilizar o terminal (algo que faço diariamente, mas acho válido do autor em introduzir à linha de comando àqueles são mais acostumados com ferramentas gráficas), instalação do Sass e Compass e por fim, alguns comandos do Sass.&lt;/p&gt;
-
-&lt;h3 id=&quot;quinta-feira-haskell&quot;&gt;Quinta-feira (Haskell)&lt;/h3&gt;
-
-&lt;p&gt;O paradigma de programação funcional sempre me intrigou e por mais que eu já aplique parte de seus princípios em Javascript, gostaria de entender mais o que pode se fazer com ele. Para isso, optei por aprender Haskell. Então as quintas-feiras então reservadas para o livro “&lt;a href=&quot;https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781784394707&quot;&gt;Learning Haskell Data Analysis&lt;/a&gt;”.&lt;/p&gt;
-
-&lt;p&gt;O livro está em inglês na plataforma Mapt.io, escolhi estudar dessa forma por que já consigo treinar a leitura em inglês mais o conteúdo sobre Haskell.&lt;/p&gt;
-
-&lt;h3 id=&quot;sexta-feira-kotlin&quot;&gt;Sexta-feira (Kotlin)&lt;/h3&gt;
-
-&lt;p&gt;Como já dito acima, tenho um forte background em Java/Android, mas com Kotlin sendo uma novidade e já conquistando uma boa aceitação entre os desenvolvedores, já está mais que na hora de começar a aprender essa linguagem, isso será feito através do &lt;a href=&quot;https://www.udemy.com/curso-kotlin-android/learn/v4/overview&quot;&gt;Curso Kotlin Android&lt;/a&gt;, na Udemy.&lt;/p&gt;
-
-&lt;p&gt;O curso começa em como utilizar o Kotlin por meio da IntelliJ IDEA e explicando algumas diferenças de Kotlin sobre o Java.&lt;/p&gt;
-
-&lt;h3 id=&quot;extra&quot;&gt;Extra&lt;/h3&gt;
-
-&lt;p&gt;Por vezes posso me interessar por outros assuntos, então irei trazer esse conteúdo extra nessa seção. Esta semana também acompanhei um curso online sobre Jekyll, tanto que o blog pelo qual lê esse artigo foi criado com esta ferramenta. O curso estava gratuito na Udemy: &lt;a href=&quot;https://www.udemy.com/criando-sites-estaticos-com-jekyll/learn/v4/overview&quot;&gt;Criando sites estáticos com Jekyll&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Para o próximo artigo, espero ter concluído as questões introdutórias da maioria dos assuntos e iniciar nas atividades práticas ou assuntos teóricos mais avançados.&lt;/p&gt;</content><author><name></name></author><summary type="html">Desde o dia 04/12 comecei a buscar uma rotina de estudos para aumentar meu conhecimento de forma gradual. Por mais que já tenhamos uma rotina diária, seja ela devida ao nosso trabalho, escola ou faculdade, é muito importante a busca por aprender coisas novas, principalmente que fujam àquele contexto que vivemos diariamente, sendo assim, procurei uma forma eficiente para poder colocar isso em prática.</summary></entry></feed>
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figsize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zlev&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'lon'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'lat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'time'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col_wrap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;../images/2019/01/plotting-magnitude-serie-temporal.png&quot; alt=&quot;Plotting magnitude série temporal&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Conteúdo rápido para consultas posteriores sobre manipulação de dados multidimensionais com Python.</summary></entry></feed>
