@@ -3,6 +3,7 @@ layout: post
 title: Manipulação de Dados Multidimensionais com Python
 date: '2019-01-18 01:09'
 categories: python meteorologia netcdf
+tags: python
 ---
 
 Conteúdo rápido para consultas posteriores sobre manipulação de dados multidimensionais com Python.
