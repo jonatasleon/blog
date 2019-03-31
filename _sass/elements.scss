@@ -237,3 +237,16 @@ img.emoji {
     width: 20px;
     height: 20px;
 }
+.asciicast {
+    width: 100%;
+    height: auto;
+    & iframe{
+        margin: auto !important;
+        width: 100% !important;
+        padding: 10px !important;
+        overflow: hidden !important;
+        margin-top:10px !important;
+        height: 442px !important;
+        background-color:  rgb(244, 244, 244) !important;
+    }
+}
