@@ -1,4 +1,179 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://jonatasleon.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jonatasleon.com/blog/" rel="alternate" type="text/html" /><updated>2019-02-05T12:40:48+00:00</updated><id>http://jonatasleon.com/blog/feed.xml</id><title type="html">Jonatas Leon</title><subtitle>Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.</subtitle><entry><title type="html">Manipulação de Dados Multidimensionais com Python</title><link href="http://jonatasleon.com/blog/python-para-dados-multidimensionais/" rel="alternate" type="text/html" title="Manipulação de Dados Multidimensionais com Python" /><published>2019-01-18T01:09:00+00:00</published><updated>2019-01-18T01:09:00+00:00</updated><id>http://jonatasleon.com/blog/python-para-dados-multidimensionais</id><content type="html" xml:base="http://jonatasleon.com/blog/python-para-dados-multidimensionais/">&lt;p&gt;Conteúdo rápido para consultas posteriores sobre manipulação de dados multidimensionais com Python.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://jonatasleon.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://jonatasleon.com/blog/" rel="alternate" type="text/html" /><updated>2019-03-31T22:49:18+00:00</updated><id>http://jonatasleon.com/blog/feed.xml</id><title type="html">Jonatas Leon</title><subtitle>Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.</subtitle><entry><title type="html">vimgrep: Pesquisando por texto sem sair do vim</title><link href="http://jonatasleon.com/blog/vimgrep-pesquisando-por-texto-sem-sair-vim/" rel="alternate" type="text/html" title="vimgrep: Pesquisando por texto sem sair do vim" /><published>2019-03-31T19:39:00+00:00</published><updated>2019-03-31T19:39:00+00:00</updated><id>http://jonatasleon.com/blog/vimgrep-pesquisando-por-texto-sem-sair-vim</id><content type="html" xml:base="http://jonatasleon.com/blog/vimgrep-pesquisando-por-texto-sem-sair-vim/">&lt;p&gt;Para quem está iniciando com vim ou o utiliza eventualmente, pode parecer comum
+sair do editor quando precisa utilizar o &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt; para pesquisar por algum trecho
+de texto entre os arquivos. Depois de descobrir como utilizar o comando
+&lt;code class=&quot;highlighter-rouge&quot;&gt;vimgrep&lt;/code&gt;, se torna muito prático fazer buscas no próprio editor de texto ao
+invés de ter todo o trabalho de voltar para o terminal, fazer a busca e, só
+então, abrir o arquivo com o resultado no vim.&lt;/p&gt;
+
+&lt;h2 id=&quot;comandos-no-vim&quot;&gt;Comandos no vim&lt;/h2&gt;
+
+&lt;p&gt;Se você já aprendeu como sair do vim sem ter que fechar a janela do terminal
+(&lt;code class=&quot;highlighter-rouge&quot;&gt;:wqa&lt;/code&gt;), sabe que para executar um comando no vim basta digitar &lt;code class=&quot;highlighter-rouge&quot;&gt;:&lt;/code&gt; que então
+o cursor é transferido para a parte inferior da sua janela, onde é possível
+inserir os comandos que serão mostrados ao longo deste artigo.&lt;/p&gt;
+
+&lt;p&gt;A cada exemplo, o vim será aberto com &lt;code class=&quot;highlighter-rouge&quot;&gt;vim -u NONE&lt;/code&gt;, para garantir que
+o arquivo de de configuração (&lt;code class=&quot;highlighter-rouge&quot;&gt;vimrc&lt;/code&gt;) não seja carregado e, assim, o vim seja
+executado puro, sem qualquer plugin ou modificação.&lt;/p&gt;
+
+&lt;h2 id=&quot;vimgrep&quot;&gt;vimgrep&lt;/h2&gt;
+
+&lt;p&gt;vimgrep é um comando nativo dentro do próprio vim. Isso traz praticidade para
+quem utiliza o vim de maneira eventual, pois não há necessidade de realizar
+configurações adicionais.&lt;/p&gt;
+
+&lt;p&gt;Antes de continuar, tenha em mente que todas as buscas serão realizadas
+a partir do diretório em que vim foi executado. Para confirmar o diretório,
+digite &lt;code class=&quot;highlighter-rouge&quot;&gt;:pwd&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;o-básico&quot;&gt;O básico&lt;/h3&gt;
+
+&lt;p&gt;Assim Você pode utilizar o vimgrep da seguinte maneira:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:vimgrep config **/*.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A descrição de cada parte do comando:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vimgrep&lt;/code&gt;: o comando propriamente dito;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;: o termo que se está pesquisando;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;**/*.js&lt;/code&gt;: uma designação coringa (&lt;code class=&quot;highlighter-rouge&quot;&gt;wildcard&lt;/code&gt;) que determina em quais arquivo será realizada a pequisa, assim, tais símbolos representam:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;**&lt;/code&gt;: todos subdiretórios a partir do diretório atual (saiba mais digitando &lt;code class=&quot;highlighter-rouge&quot;&gt;:help starstart-wildcard&lt;/code&gt;);&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.js&lt;/code&gt;: todos os arquivos com final igual a &lt;code class=&quot;highlighter-rouge&quot;&gt;.js&lt;/code&gt;;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script id=&quot;asciicast-237787&quot; src=&quot;https://asciinema.org/a/237787.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;center&gt;
+    &lt;small&gt;vimgrep básico&lt;/small&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;pesquisando-por-padrões&quot;&gt;Pesquisando por padrões&lt;/h3&gt;
+
+&lt;p&gt;Também é possível utiliza padrões de expressões regulares (&lt;em&gt;regex&lt;/em&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:vimgrep /config.*builder/ **/*.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A diferença entre este comando e o anterior está na maneira com que o termo
+pesquisado é utilizado. Temos em &lt;code class=&quot;highlighter-rouge&quot;&gt;/config.*builder/&lt;/code&gt; o padrão desejado,
+ignorando &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, que é utilizado para determinar o início e o fim do padrão. Com
+essa representação se procura um trecho que tenha as palavras &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;
+e &lt;code class=&quot;highlighter-rouge&quot;&gt;builder&lt;/code&gt;, as quais devem ocorrer na ordem que foram declaradas e estar na
+mesma linha, podendo, ou não, haver qualquer texto entres cada palavra. Veja
+mais aqui: http://vimregex.com.&lt;/p&gt;
+
+&lt;script id=&quot;asciicast-237827&quot; src=&quot;https://asciinema.org/a/237827.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;center&gt;
+    &lt;small&gt;Pesquisando por padrões&lt;/small&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;navegando-entre-os-resultados&quot;&gt;Navegando entre os resultados&lt;/h3&gt;
+
+&lt;p&gt;Geralmente, mais de um resultado é obtido em pesquisas deste tipo, assim,
+navegar entre os demais trechos encontrados é fundamental.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:cn&lt;/code&gt;: exibe o próximo resultado;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:cp&lt;/code&gt;: exibe o resultado anterior;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script id=&quot;asciicast-237950&quot; src=&quot;https://asciinema.org/a/237950.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;center&gt;
+    &lt;small&gt;Navegando entre resultados&lt;/small&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;uma-melhor-apresentação---quickfix&quot;&gt;Uma melhor apresentação - &lt;em&gt;QuickFix&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;Ainda há uma maneira de exibir os resultados de forma mais agradável, digite
+&lt;code class=&quot;highlighter-rouge&quot;&gt;:copen&lt;/code&gt; e se abrirá a janela de apresentação de erros, chamada de &lt;em&gt;QuickFix&lt;/em&gt;,
+neste caso, o que é mostrado nela são os resultados da pesquisa realizada.&lt;/p&gt;
+
+&lt;script id=&quot;asciicast-237951&quot; src=&quot;https://asciinema.org/a/237951.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;center&gt;
+    &lt;small&gt;Listando resultados em &lt;i&gt;QuickFix&lt;/i&gt;&lt;/small&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Também é possível fazer tudo em um único comando:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:vimgrep exemplo ** | cw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Com isso, o resultado será exibido normalmente e a janela de &lt;em&gt;QuickFix&lt;/em&gt; já
+estará aberta.&lt;/p&gt;
+
+&lt;p&gt;Para trocar de janela, pressione &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL + W&lt;/code&gt; duas vezes (&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;CTRL-W&amp;gt;&amp;lt;CTRL-W&amp;gt;&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;criando-um-comando-findall&quot;&gt;Criando um comando: &lt;code class=&quot;highlighter-rouge&quot;&gt;FindAll&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Agora que já sabemos como realizar pesquisas ao longo dos arquivos no diretório
+atual, é interessante criar um comando que facilite buscas genéricas.&lt;/p&gt;
+
+&lt;p&gt;Para criar um comando digite:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:command! -nargs=1 FindAll :execute &quot;vimgrep /&amp;lt;args&amp;gt;/gj **&quot; | cw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dessa forma:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;command!&lt;/code&gt;: designa a criação de um novo comando, a exclamação (&lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt;) define que substitua o comando caso ele já exista;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-nargs=1&lt;/code&gt;: determina a quantidade de parâmetros que o comando irá receber, neste caso, apenas 1;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FindAll&lt;/code&gt;: o nome do novo comando;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:execute&lt;/code&gt;: executa comandos a partir de &lt;em&gt;strings&lt;/em&gt;;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;vimgrep /&amp;lt;args&amp;gt;/gj **&quot;&lt;/code&gt;: neste caso, temos algumas coisas não utilizadas anteriormente:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt;: determina que todos resultados sejam adicionados, por mais que se repitam na mesma linha;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;j&lt;/code&gt;: faz com que apenas a janela &lt;em&gt;QuickFix&lt;/em&gt; seja atualizada, sem sair do arquivo atual e pular para o primeiro resultado;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para evitar que seja necessário criar o comando toda vez que abrir o vim,
+adicione o comando ao arquivo &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.vimrc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ignorando-diretórios&quot;&gt;Ignorando diretórios&lt;/h2&gt;
+
+&lt;p&gt;Em alguns casos, não desejamos que as pesquisas sejam realizadas em
+determinados diretórios, para isso vamos redefinir a opção de configuração
+&lt;code class=&quot;highlighter-rouge&quot;&gt;wildignore&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set wildignore+=*/node_modules/*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Com isso, a busca não mais ocorrerá nos arquivos dentro do diretório
+&lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para visualizar arquivos e diretórios que estão ignorados:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set wildignore?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Também é possível remover um diretório da lista de ignorados:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set wildignore-=*/node_modules/*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Para saber mais &lt;code class=&quot;highlighter-rouge&quot;&gt;:help wildignore&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
+
+&lt;p&gt;Com tudo que foi mostrado, sabemos como:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Procurar um termo, seja ele específico ou um padrão, em vários arquivos, filtrando pela extensão ou não;&lt;/li&gt;
+  &lt;li&gt;Navegar entre os resultados, podendo visualizá-los na janela &lt;em&gt;QuickFix&lt;/em&gt;;&lt;/li&gt;
+  &lt;li&gt;Criar um comando genérico que facilite a pesquisa;&lt;/li&gt;
+  &lt;li&gt;Definir diretórios ou arquivos para serem ignorados pela busca, baseados em coringas (&lt;code class=&quot;highlighter-rouge&quot;&gt;wildcards&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Agora, para para procurar por qualquer termo, você não precisa mais sair do vim, seja por
+praticidade ou por não lembrar como. &lt;strong&gt;:D&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="vi" /><category term="vim" /><category term="vimgrep" /><category term="grep" /><category term="multiplos" /><category term="varios" /><category term="arquivos" /><summary type="html">Para quem está iniciando com vim ou o utiliza eventualmente, pode parecer comum sair do editor quando precisa utilizar o grep para pesquisar por algum trecho de texto entre os arquivos. Depois de descobrir como utilizar o comando vimgrep, se torna muito prático fazer buscas no próprio editor de texto ao invés de ter todo o trabalho de voltar para o terminal, fazer a busca e, só então, abrir o arquivo com o resultado no vim.</summary></entry><entry><title type="html">Manipulação de Dados Multidimensionais com Python</title><link href="http://jonatasleon.com/blog/python-para-dados-multidimensionais/" rel="alternate" type="text/html" title="Manipulação de Dados Multidimensionais com Python" /><published>2019-01-18T01:09:00+00:00</published><updated>2019-01-18T01:09:00+00:00</updated><id>http://jonatasleon.com/blog/python-para-dados-multidimensionais</id><content type="html" xml:base="http://jonatasleon.com/blog/python-para-dados-multidimensionais/">&lt;p&gt;Conteúdo rápido para consultas posteriores sobre manipulação de dados multidimensionais com Python.&lt;/p&gt;
 
 &lt;p&gt;Dependências:&lt;/p&gt;
 
