@@ -25,6 +25,6 @@
         ga('send', 'pageview');
     </script>
 {% endif %}
-{% if page.comments != false %}
+{% if include.comments %}
     {% include disqus_comments.html %}
 {% endif %}
