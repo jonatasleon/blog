@@ -1,1 +1,1 @@
-Sitemap: http://jonatasleon.com/blog/sitemap.xml
+Sitemap: http://jonatasleon.com/sitemap.xml
