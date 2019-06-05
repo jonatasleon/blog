@@ -22,7 +22,7 @@ cd _site
 
 # inside this git repo we'll pretend to be a new user
 git config user.name "Jonatas Leon"
-git config user.email "jonatas.leon@gmail.com"
+git config user.email "me@jonatasleon.com"
 
 # The first and only commit to this new Git repo contains all the
 # files present with the commit message "Deploy to GitHub Pages".

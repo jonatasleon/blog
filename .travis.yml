@@ -16,4 +16,4 @@ sudo: false
 
 env:
   global:
-    - GH_REF: github.com/jonatasleon/blog.git
+    - GH_REF: github.com/jonatasleon/jonatasleon.github.io.git
