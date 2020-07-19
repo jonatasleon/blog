@@ -1,8 +1,8 @@
 # Site
 title:              Jonatas Leon
-bio:                'Programador, Leitor, Eterno estudante.'
+bio:                'Software Developer, Data Science enthusiast'
 locale:             pt_BR
-baseurl:            /
+baseurl:            ''
 url:                http://jonatasleon.com
 description: >-
   Blog pessoal sobre programação, tecnologia, a vida, o universo e tudo mais.
